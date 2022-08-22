@@ -1,0 +1,44 @@
+<div>
+  <form>
+    <p>
+      <input
+        type="text"
+        name="firstName"
+        placeholder="Enter first name"
+        [(ngModel)]="firstName"  
+      >
+    </p>
+    <p>
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Enter last name"
+        [(ngModel)]="lastName"
+      >
+    </p>
+    <p>
+      Full Name: {{ firstName }} {{ lastName }}
+    </p>
+  </form>
+  <!-- <p>
+    <input
+      type="text"
+      placeholder="Enter first name"
+      [value]="firstName"
+      #fName
+      (keyup)="onFirstNameChanged(fName.value)"  
+    >
+  </p>
+  <p>
+    <input
+      type="text"
+      placeholder="Enter last name"
+      [value]="lastName"
+      #lName
+      (keyup)="onLastNameChanged(lName.value)"
+    >
+  </p>
+  <p>
+    Full Name: {{ firstName }} {{ lastName }}
+  </p> -->
+</div>
