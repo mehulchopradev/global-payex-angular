@@ -8,6 +8,7 @@ import { NameGeneratorComponent } from './name-generator/name-generator.componen
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CalcResultsComponent } from './calc-results/calc-results.component';
 import { CalcFormComponent } from './calc-form/calc-form.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CalcFormComponent } from './calc-form/calc-form.component';
     NameGeneratorComponent,
     CalculatorComponent,
     CalcResultsComponent,
-    CalcFormComponent
+    CalcFormComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,

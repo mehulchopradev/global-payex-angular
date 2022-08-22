@@ -1,3 +1,16 @@
-.red {
-  color: red;
+.app-container {
+  text-align: center;
+}
+
+.app-container > .header > .nav-menu {
+  margin: 20px;
+}
+
+.app-container > .footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.app-container > .header > .nav-menu a {
+  margin: 10px;
 }

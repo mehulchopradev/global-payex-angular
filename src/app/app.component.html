@@ -1,2 +1,14 @@
-<app-name-generator></app-name-generator>
-<app-calculator></app-calculator>
+<div class="app-container">
+  <div class="header">
+    <h2>Welcome to my utility app</h2>
+    <div class="nav-menu">
+      <a routerLink="calc">Calculator</a> | <a routerLink="todos">Todos</a>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer">
+    Copyright 2022. All rights reserved
+  </div>
+</div>
