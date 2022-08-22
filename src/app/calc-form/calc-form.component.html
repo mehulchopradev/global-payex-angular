@@ -1,0 +1,33 @@
+<div>
+  <div class="row">
+    <input
+      type="number"
+      name="firstNo"
+      placeholder="Enter 1st no."
+      [(ngModel)]="firstNo"
+    >
+    <select name="operations" [(ngModel)]="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+    </select>
+    <input
+      type="number"
+      name="secondNo"
+      placeholder="Enter 2nd no." 
+      [(ngModel)]="secondNo" 
+    >
+  </div>
+  <div class="row">
+    <button (click)="onCalculate()">Calculate</button>
+  </div>
+  <div class="row">
+    <input
+      type="text"
+      name="ans"
+      placeholder="Ans"
+      [(ngModel)]="ans" 
+      readonly
+    >
+  </div>
+</div>
