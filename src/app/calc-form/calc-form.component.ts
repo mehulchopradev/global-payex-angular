@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CalcInfo } from '../types/calc-info';
 
 @Component({
@@ -6,17 +6,33 @@ import { CalcInfo } from '../types/calc-info';
   templateUrl: './calc-form.component.html',
   styleUrls: ['./calc-form.component.css']
 })
-export class CalcFormComponent implements OnInit {
+export class CalcFormComponent implements OnInit, OnChanges {
 
   firstNo = '';
   secondNo = '';
   operation = '+';
   ans = '';
 
+  @Input()
+  defaultCalcData: CalcInfo | null = null;
+
   @Output()
   calculated: EventEmitter<CalcInfo> = new EventEmitter();
 
   constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['defaultCalcData'] &&
+      changes['defaultCalcData'].previousValue != changes['defaultCalcData'].currentValue) {
+        const defaultCalcData = changes['defaultCalcData'].currentValue as CalcInfo;
+        this.firstNo = defaultCalcData.firstNo.toString();
+        this.secondNo = defaultCalcData.secondNo.toString();
+        this.operation = defaultCalcData.operation;
+        this.ans = defaultCalcData.ans.toString();
+
+        this.calculated.emit(defaultCalcData);
+      }
+  }
 
   ngOnInit(): void {
   }

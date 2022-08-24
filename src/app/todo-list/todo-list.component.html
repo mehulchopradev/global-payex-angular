@@ -1,5 +1,5 @@
 <div class="todo-list-container">
-  <table>
+  <table *ngIf="todosService.todos.length; else noTasksSection">
     <tbody>
       <tr *ngFor="let todo of todosService.todos">
         <td>
@@ -11,6 +11,9 @@
       </tr>
     </tbody>  
   </table>
+  <ng-template #noTasksSection>
+    No tasks scheduled yet
+  </ng-template>
   <div *ngIf="todosService.todos.length" class="action-area">
     <button
       [disabled]="markedForCompletionTodos === 0"
