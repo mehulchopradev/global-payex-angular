@@ -1,0 +1,15 @@
+.todo-list-container {
+  text-align: center;
+}
+
+.todo-list-container > table {
+  margin: auto;
+}
+
+.todo-list-container > .action-area {
+  margin: 10px;
+}
+
+.todo-list-container > .action-area > button {
+  margin-right: 10px;
+}
