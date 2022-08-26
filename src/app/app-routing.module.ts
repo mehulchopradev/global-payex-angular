@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { TodosComponent } from './todos/todos.component';
+import { CalculatorComponent } from './calc/calculator/calculator.component';
+import { TodosComponent } from './tasks/todos/todos.component';
 
 const routes: Routes = [
   { path: 'calc', component: CalculatorComponent },

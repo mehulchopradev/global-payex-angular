@@ -22,6 +22,7 @@ export class CalcFormComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes['defaultCalcData']);
     if (changes['defaultCalcData'] &&
       changes['defaultCalcData'].previousValue != changes['defaultCalcData'].currentValue) {
         const defaultCalcData = changes['defaultCalcData'].currentValue as CalcInfo;

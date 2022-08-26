@@ -14,7 +14,7 @@
   <ng-template #noTasksSection>
     No tasks scheduled yet
   </ng-template>
-  <div *ngIf="todosService.todos.length" class="action-area">
+  <div *ngIf="todosService.todos.length" class="action-area t-actionArea">
     <button
       [disabled]="markedForCompletionTodos === 0"
       (click)="onRemoveCompletedTodos()"

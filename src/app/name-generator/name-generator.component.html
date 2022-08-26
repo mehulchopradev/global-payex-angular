@@ -1,10 +1,10 @@
 <div>
-  <form>
     <p>
       <input
         type="text"
         name="firstName"
         placeholder="Enter first name"
+        class="t-firstName"
         [(ngModel)]="firstName"  
       >
     </p>
@@ -12,14 +12,14 @@
       <input
         type="text"
         name="lastName"
+        class="t-lastName"
         placeholder="Enter last name"
         [(ngModel)]="lastName"
       >
     </p>
-    <p>
+    <p class="t-fullName">
       Full Name: {{ firstName }} {{ lastName }}
     </p>
-  </form>
   <!-- <p>
     <input
       type="text"

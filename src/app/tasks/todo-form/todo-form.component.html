@@ -1,0 +1,15 @@
+<div class="todo-form-container">
+  <input
+    type="text"
+    placeholder="Enter todo"
+    [(ngModel)]="newTodo"
+    class="t-newTodo">
+  <button
+    [disabled]="!newTodo"
+    (click)="onSave()"
+    class="t-save"
+    type="button"
+  >
+    Save
+  </button>
+</div>
