@@ -8,6 +8,7 @@ import { NameGeneratorComponent } from './name-generator/name-generator.componen
 import { CommonUtilitiesModule } from './common-utilities/common-utilities.module';
 import { CalcModule } from './calc/calc.module';
 import { TasksModule } from './tasks/tasks.module';
+import { LibMgmtModule } from './lib-mgmt/lib-mgmt.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TasksModule } from './tasks/tasks.module';
     FormsModule,
     CommonUtilitiesModule,
     CalcModule,
-    TasksModule
+    TasksModule,
+    LibMgmtModule
   ],
   providers: [
   ],

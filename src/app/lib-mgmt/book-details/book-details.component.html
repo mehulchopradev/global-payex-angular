@@ -1,0 +1,13 @@
+<div class="book-details-container" *ngIf="book">
+  <h2>{{book.title}}</h2>
+  <i>({{book._id}})</i><br>
+  <i>Price: {{book.price}}</i>
+  <i>Pages: {{book.pages}}</i>
+
+  <div *ngIf="book.publicationHouseId">
+    <h3>Publication house details</h3>
+    <i>Name: {{book.publicationHouseId.name}}</i>
+    <i>Ratings: {{book.publicationHouseId.ratings}}</i>
+    <i>Estd.: {{book.publicationHouseId.establishmentDate}}</i>
+  </div>
+</div>

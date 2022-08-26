@@ -1,0 +1,9 @@
+.books-container > table {
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
