@@ -7,7 +7,7 @@
       [(ngModel)]="firstNo"
       class="t-firstNo"
     >
-    <select name="operations" [(ngModel)]="operation">
+    <select name="operations" [(ngModel)]="operation" class="t-operations">
       <option value="+">+</option>
       <option value="-">-</option>
       <option value="*">*</option>
@@ -21,7 +21,7 @@
     >
   </div>
   <div class="row">
-    <button (click)="onCalculate()">Calculate</button>
+    <button (click)="onCalculate()" class="t-calculate">Calculate</button>
   </div>
   <div class="row">
     <input

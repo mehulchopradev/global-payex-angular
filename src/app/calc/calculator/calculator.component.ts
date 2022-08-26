@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
+import { CalculatorService } from '../calculator.service';
 import { CalcInfo } from '../types/calc-info';
-
-const url = 'https://my-json-server.typicode.com/mehulchopradev/calc-service/defaultCalcData';
 
 @Component({
   selector: 'app-calculator',
@@ -17,15 +15,14 @@ export class CalculatorComponent implements OnInit {
   ans = '';
   defaultCalcData: CalcInfo | null = null;
 
-  constructor() { }
+  constructor(private calcService: CalculatorService) { }
 
   async ngOnInit() {
     // lifecycle method
     // called only once at the start when the component is being mounted on the DOM
 
     try {
-      const response = await axios.get<CalcInfo>(url);
-      const calcInfo: CalcInfo = response.data;
+      const calcInfo: CalcInfo = await this.calcService.fetchDefaultCalcData();
       this.defaultCalcData = calcInfo;
     } catch (err) {
       console.log(err);
