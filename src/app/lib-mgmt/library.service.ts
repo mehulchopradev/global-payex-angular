@@ -20,6 +20,21 @@ export class LibraryService {
     return throwError(() => new Error(err.message));
   }
 
+  createNewBook(title: string, price: number, pages: number): Observable<Book> {
+    return this.http.post<Book>(url, {
+      title,
+      price,
+      pages
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   fetchAllBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(url)
       .pipe(

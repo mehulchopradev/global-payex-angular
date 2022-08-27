@@ -1,6 +1,13 @@
 <div class="library-container">
   <h1>Library Management application</h1>
-  <button>Add new book</button>
+  <button
+    *ngIf="!isAddBookFormVisible; else bookForm"
+    (click)="onToggleBookForm()">Add new book</button>
+
+  <ng-template #bookForm>
+    <!-- <app-book-form (cancel)="onToggleBookForm()"></app-book-form> -->
+    <app-book-form-reactive></app-book-form-reactive>
+  </ng-template>
 
   <router-outlet></router-outlet>
 </div>

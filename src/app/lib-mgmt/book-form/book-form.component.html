@@ -1,0 +1,15 @@
+<div>
+  <p>
+    <input type="text" placeholder="Enter title" [(ngModel)]="title">
+  </p>
+  <p>
+    <input type="number" placeholder="Enter price" [(ngModel)]="price">
+  </p>
+  <p>
+    <input type="number" placeholder="Enter pages" [(ngModel)]="pages">
+  </p>
+  <p>
+    <button (click)="onSave()">Save</button>
+    <button (click)="onCancel()">Cancel</button>
+  </p>
+</div>

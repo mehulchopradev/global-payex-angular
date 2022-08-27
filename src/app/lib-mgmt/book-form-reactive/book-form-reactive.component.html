@@ -1,0 +1,44 @@
+<div [formGroup]="bookFormGroup">
+  <p>
+    <input type="text" placeholder="Enter title" formControlName="title">
+  </p>
+  <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+    <div *ngIf="title?.errors?.['required']" class="error">
+      Book title is needed
+    </div>
+    <div *ngIf="title?.errors?.['maxlength']" class="error">
+      Book title must be min 10 chars
+    </div>
+    <div *ngIf="title?.errors?.['bookTitleForbidden']" class="error">
+      Book title cannot contain sensitive words
+    </div>
+  </div>
+  <p>
+    <input type="number" placeholder="Enter price" formControlName="price">
+  </p>
+  <p>
+    <input type="number" placeholder="Enter pages" formControlName="pages">
+  </p>
+  <div *ngIf="pages?.invalid && (pages?.dirty || pages?.touched)">
+    <div *ngIf="pages?.errors?.['required']" class="error">
+      Book pages is needed
+    </div>
+    <div *ngIf="pages?.errors?.['min']" class="error">
+      Book pages must be more than 0
+    </div>
+  </div>
+  <div formArrayName="authors">
+    Authors <button (click)="onAddAuthor()">Add author</button>
+    <div *ngFor="let author of authors.controls; let i = index;">
+      <div [formGroupName]="i">
+        <input type="text" placeholder="author name" formControlName="name">
+        <input type="text" placeholder="gender" formControlName="gender">
+        <button (click)="onRemoveAuthor(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <p>
+    <button (click)="onSave()">Save</button>
+    <button>Cancel</button>
+  </p>
+</div>
